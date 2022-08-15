@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "filebase-slow-upload-demo"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "filebase_slow_upload_demo"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+minio = "^7.1.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
