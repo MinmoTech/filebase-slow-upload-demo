@@ -14,6 +14,7 @@ minio_client = Minio(
     secure=True,
     region="us-east-1",
 )
+times_list = []
 for i in range(500):
     # generate random data of size 200kb
     data = bytearray(os.urandom(200 * 1024))
@@ -28,3 +29,9 @@ for i in range(500):
         )
     end = time.time()
     print(f"{i} uploaded in {end - start} seconds")
+    times_list.append(end - start)
+
+print(f"Average upload time: {sum(times_list) / len(times_list)} seconds")
+print(f"Median upload time: {sorted(times_list)[len(times_list) // 2]} seconds")
+print(f"Fastest upload time: {min(times_list)} seconds")
+print(f"Slowest upload time: {max(times_list)} seconds")
